@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+    <menuitem
+        id="hr_announcement_template_menu"
+        name="Announcement_templates"
+        parent="hr_reward_warning.hr_announcement_menu_root"
+        action="hr_announcement_template_action"
+        groups="vision_hr_reward_warning.group_announcement_manager"
+        sequence="20"
+    />
+
+</odoo>

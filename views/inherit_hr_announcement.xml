@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="inherit_hr_announcement_form" model="ir.ui.view">
+        <field name="name">inherit.hr.announcement.form</field>
+        <field name="model">hr.announcement</field>
+        <field name="inherit_id" ref="hr_reward_warning.hr_announcement_view_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//header" position="inside">
+                <button
+                    class="btn-primary"
+                    name="send_announcement"
+                    type="object"
+                    string="Resend Announcement"
+                    confirm="Are you sure you want to resend the Announcement?"
+                    invisible="state != 'approved'"
+                />
+                <button
+                    class="btn-primary"
+                    name="action_hr_announcement_preview"
+                    type="object"
+                    string="Announcement Preview"
+                />
+            </xpath>
+
+            <xpath expr="//header/field[@name='state']" position="replace">
+                <field 
+                    name="state"
+                    widget="statusbar"
+                    statusbar_visible="draft,to_approve,approved"
+                />
+            </xpath>
+
+            <xpath expr="//sheet" position="replace">
+                <sheet>
+
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name" class="oe_inline" readonly="1"/>
+                        </h1>
+                        <div name="options_active">
+                            <div class="d-flex gap-3">
+
+                                <div class="d-flex gap-2">
+                                    <label 
+                                        for="is_announcement"
+                                        class="oe_inline"
+                                        string="General Announcement"
+                                    />
+                                    <field
+                                        class="oe_inline oe_input_align"
+                                        name="is_announcement" 
+                                        readonly="name != False"
+                                    />
+                                </div>
+
+                                <div class="d-flex gap-2">
+                                    <label for="modal" string="Popup"/>
+                                    <field name="modal"/>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <group string="Title">
+                        <field
+                            name="announcement_reason"
+                            readonly="state != 'draft'" 
+                            nolabel="1" 
+                            colspan="2"
+                        />
+                    </group>
+
+                    <group string="Recipient(s) and type">
+                        <group>
+                            <field
+                                name="announcement_type"
+                                invisible="is_announcement != False"
+                                required="is_announcement == False"
+                            />
+                            <field name="announcement_template_id"/>
+                        </group>
+                        <group>
+                            <field 
+                                name="employee_ids" 
+                                widget="many2many_tags"
+                                invisible="is_announcement != False or announcement_type != 'employee'"
+                            />
+                            <field
+                                name="department_ids"
+                                widget="many2many_tags"
+                                invisible="is_announcement != False or announcement_type != 'department'"
+                            />
+                            <field
+                                name="position_ids" 
+                                widget="many2many_tags"
+                                invisible="is_announcement != False or announcement_type != 'job_position'"
+                            />
+                            <field 
+                                name="company_id"
+                                options="{'no_create': True}"
+                                groups="base.group_multi_company"
+                            />
+                        </group>
+                    </group>
+
+                    <group string="Dates and Recurrence">
+                        <group>
+                            <field name="next_send_date"/>
+                            <field name="date_start"/>
+                            <field name="recurrence_type"/>
+                            <field 
+                                name="month_day" 
+                                invisible="recurrence_type != 'monthly'"
+                            />
+                            <field 
+                                name="week_day_ids"
+                                widget="many2many_tags"
+                                invisible="recurrence_type != 'weekly'"
+                            />
+                        </group>
+                        <group>
+                            <field name="last_send_date"/>
+                            <field 
+                                name="date_end" 
+                                readonly="recurrence_type == 'none'"
+                            />
+                            <field 
+                                name="recurrence_interval"
+                                readonly="recurrence_type == 'none'"
+                            />
+                            <field name="requested_date" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page name="announcement" string="Conteúdo">
+                            <field 
+                                name="announcement"
+                                readonly="state != 'draft'"
+                            />
+                        </page>
+                        <page name="attachments" string="Imagens">
+                            <field
+                                class="oe_inline"
+                                name="attachment_id"
+                                widget="many2many_binary"
+                            />
+                        </page>
+                    </notebook>
+
+                </sheet>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

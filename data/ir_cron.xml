@@ -1,0 +1,13 @@
+<odoo>
+
+    <record id="ir_cron_hr_announcement_recurrence" model="ir.cron">
+        <field name="name">hr_announcement: Recurrence</field>
+        <field name="model_id" ref="model_hr_announcement"/>
+        <field name="state">code</field>
+        <field name="code">mode._run_scheduled_announcements()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="active">True</field>
+    </record>
+
+</odoo>

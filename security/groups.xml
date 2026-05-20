@@ -1,0 +1,22 @@
+<odoo>
+    <record id="module_category_announcement" model="ir.module.category">
+        <field name="name">Announcement</field>
+    </record>
+
+    <record id="privilege_hr_reward_warning" model="res.groups.privilege">
+        <field name="name">Announcement</field>
+        <field name="category_id" ref="module_category_announcement"/>
+    </record>
+
+    <record id="group_announcement_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="privilege_id" ref="privilege_hr_reward_warning"/>
+    </record>
+
+    <record id="group_announcement_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="privilege_id" ref="privilege_hr_reward_warning"/>
+        <field name="implied_ids" eval="[(4, ref('group_announcement_user'))]"/>
+    </record>
+
+</odoo>

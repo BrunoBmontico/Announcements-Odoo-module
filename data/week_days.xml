@@ -1,0 +1,40 @@
+<odoo>
+    <data noupdate="1">
+
+        <record id="week_day_sunday" model="hr.week.day">
+            <field name="name">Sunday</field>
+            <field name="code">sunday</field>
+        </record>
+
+        <record id="week_day_monday" model="hr.week.day">
+            <field name="name">Monday</field>
+            <field name="code">monday</field>
+        </record>
+
+        <record id="week_day_tuesday" model="hr.week.day">
+            <field name="name">Tuesday</field>
+            <field name="code">tuesday</field>
+        </record>
+
+        <record id="week_day_wednesday" model="hr.week.day">
+            <field name="name">Wednesday</field>
+            <field name="code">wednesday</field>
+        </record>
+
+        <record id="week_day_thursday" model="hr.week.day">
+            <field name="name">Thursday</field>
+            <field name="code">thursday</field>
+        </record>
+
+        <record id="week_day_friday" model="hr.week.day">
+            <field name="name">Friday</field>
+            <field name="code">friday</field>
+        </record>
+
+        <record id="week_day_saturday" model="hr.week.day">
+            <field name="name">Saturday</field>
+            <field name="code">saturday</field>
+        </record>
+        
+    </data>
+</odoo>
