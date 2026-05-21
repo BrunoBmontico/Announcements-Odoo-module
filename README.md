@@ -52,7 +52,7 @@ Managers can preview the announcement modal before approving it, using the **Pre
 2. Select a template, configure the recurrence, and define the target audience.
 3. Enable **Popup** if you want the announcement to appear as a modal.
 4. Use the **Preview** button to check how it will look before approving.
-5. Approve the announcement — it will be sent immediately if within the active date range.
+5. Approve the announcement - it will be sent immediately if within the active date range.
 
 ### Recurrence
 - Set **Recurrence** to `Daily`, `Weekly`, or `Monthly`.
