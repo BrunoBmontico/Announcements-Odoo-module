@@ -23,9 +23,9 @@
     
     'assets': {
         'web.assets_backend': [
-            'vision_hr_reward_warning/static/src/js/image_carousel.js',
-            'vision_hr_reward_warning/static/src/css/image_carousel.css',
-            'vision_hr_reward_warning/static/src/js/announcement_listener.js',
+            'ext_hr_reward_warning/static/src/js/image_carousel.js',
+            'ext_hr_reward_warning/static/src/css/image_carousel.css',
+            'ext_hr_reward_warning/static/src/js/announcement_listener.js',
         ],
     },
 }
