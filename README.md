@@ -1,6 +1,6 @@
 # Announcements - Odoo Module
 
-Extension of the [`hr_reward_warning`] module, adding announcement templates, recurrence scheduling, popup (modal) notifications, and real-time delivery via the Odoo bus.
+Extension of the `hr_reward_warning` module, adding announcement templates, recurrence scheduling, popup (modal) notifications, and real-time delivery via the Odoo bus.
 
 - **Author:** Bruno Bonassi Montico  
 - **Version:** 19.0.0.0  
