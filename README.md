@@ -4,7 +4,6 @@ Extension of the `hr_reward_warning` module, adding announcement templates, recu
 
 - **Author:** Bruno Bonassi Montico  
 - **Version:** 19.0.0.0  
-- **License:** AGPL-3  
 - **Depends on:** `hr_reward_warning`
 
 ---
