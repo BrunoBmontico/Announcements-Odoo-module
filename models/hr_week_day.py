@@ -4,7 +4,7 @@ class HrWeekDay(models.Model):
     _name = "hr.week.day"
 
     name = fields.Char(
-        string="Nome"
+        string="Name"
     )
 
     code = fields.Selection(
